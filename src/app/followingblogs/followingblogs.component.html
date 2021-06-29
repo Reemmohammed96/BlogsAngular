@@ -12,7 +12,7 @@
     <button *ngIf="!isLiked(item.likes)" (click)="like(item._id)" style="background-color: white;border: none;">
         <i  id="like" class="material-icons" >favorite_border</i>
     </button>
-    <button *ngIf="isLiked(item.likes)" (click)="unlike(item._id)" style="background-color: white;border: none;">
+    <button id="likeborder" *ngIf="isLiked(item.likes)" (click)="unlike(item._id)" style="background-color: white;border: none;">
         <i  id="unlike" class="material-icons" >favorite</i>
     </button>
         
@@ -28,5 +28,21 @@
     
 </div>
     </div>
+<div class="col-lg-3" >
+    <div id="card" style="position: fixed;height: 90%;right:3px;top: 60px;bottom: 0;">
+        <div style="margin-bottom: 20px;text-align: center; ">
+            <span style="font-size: 20px;color: grey;">Suggesions for you</span>
+            </div>
+    <div class="scrollmenu" >
+       
+        <div *ngFor="let item of suggesions">
+        <a routerLink='/users/{{item._id}}/blogs/userBlogs/{{item._id}}'
+         style="font-size: 16px;text-align: left;" href="#home"><img id="profileImg" 
+          [src]=getUser(item.userImg)>{{item.username}}</a>
+        </div>
 
+        ...
+      </div>
+      </div>
+</div>
 </div>

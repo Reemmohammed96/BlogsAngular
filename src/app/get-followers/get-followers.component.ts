@@ -31,4 +31,10 @@ export class GetFollowersComponent implements OnInit {
     }
     )
   }
+  getUser(img:string){
+    if(img == undefined){
+      return "/assets/img/user-image.jpg";
+    }else{
+      return "http://localhost:8080/"+img;
+    }}
 }

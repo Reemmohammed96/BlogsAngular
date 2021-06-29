@@ -75,7 +75,15 @@ i{
      color: rgb(95, 93, 93);
      margin-right: 5px;
 }
+#like {
+    font-size: 35px;
+    color: black;
+}
 
+#unlike{
+    font-size: 35px;
+    color: red;
+}
 
 
 

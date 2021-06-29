@@ -6,7 +6,7 @@ body {
     margin: 0 auto;
     float: none;
     margin-bottom: 10px;
-    width: 600px;
+    width: 650px;
     border: 1px solid lightgray;
     margin-bottom: 50px;
 }
@@ -63,6 +63,13 @@ textarea:focus {
 #unlike{
     font-size: 35px;
     color: red;
+}
+#like:active{
+    border: none;
+}
+
+i:checked{
+    border: none;
 }
 
 
@@ -121,6 +128,9 @@ div.scrollmenu {
     text-align: center;
     padding: 10px;
     text-decoration: none;
+  }
+  button:active{
+    outline:none ;
   }
   
   

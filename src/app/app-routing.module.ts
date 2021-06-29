@@ -15,9 +15,15 @@ import { AuthGuard } from './auth.guard';
 import { PostBlogComponent } from './post-blog/post-blog.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { EditBlogComponent } from './edit-blog/edit-blog.component';
+import { FollowingblogsComponent } from './followingblogs/followingblogs.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: 'home', component: GetAllblogsComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: FollowingblogsComponent, canActivate: [AuthGuard] },
+  { path: 'about', component:AboutComponent},
+  {path:'contact',component:ContactComponent},
+  {path :'homeAll',component:GetAllblogsComponent},
   { path: 'edit/:id', component: EditProfileComponent },
   { path: 'users/add', component: RegisterComponent },
   { path: 'users/login', component: LoginComponent },

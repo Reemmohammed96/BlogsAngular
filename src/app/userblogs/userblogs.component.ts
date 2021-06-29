@@ -14,19 +14,16 @@ export class UserblogsComponent implements OnInit {
   comment:string
   flag: number;
   constructor(private blogService:BlogsService,public ar:ActivatedRoute,public r:Router) { }
-  formGroup: FormGroup | any;
 
   ngOnInit(): void {
-    this.formGroup=new FormGroup({
-      body:new FormControl
-    })
+  
     let id=0;
     this.ar.params.subscribe(
       a=>{id=a['id']
         console.log(a)
       this.blogService.getblog(id).subscribe(
         e => {
-          if (e.Author == JSON.parse(localStorage.getItem('USER')).username) {
+          if (e.userId == JSON.parse(localStorage.getItem('USER'))._id) {
             this.flag = 1;
           } else {
             this.flag = 0;
@@ -39,35 +36,37 @@ export class UserblogsComponent implements OnInit {
 
 
   }
-  postComment(){
-
-    let id=0;
-    this.ar.params.subscribe(
-      a=>{id=a['id']
-      console.log(a)
-    this.blogService.postComment(id,this.formGroup.value.body).subscribe(
+  postComment(id:any){
+    this.blogService.postComment(id,this.comment).subscribe(
       e=>{
-        console.log(e)        
-        console.log(this.comment)
+        e.body=this.comment
+        console.log(e)
       }
     )
-    }
-    )
-
   }
 
   delete() {
+    if(confirm("are you sure you want to delete this blog")){
     let id = 0;
     this.ar.params.subscribe(
       e => {
         id = e['id']
         this.blogService.delete(id).subscribe(
           a => {
-            this.r.navigateByUrl('home');
+            this.r.navigateByUrl('users/'+this.blog.userId+'/blogs/userBlogs/'+this.blog.userId);
             console.log(a)
           }
         )
       })
+    }
   }
+  getUser(img:string){
+    if(img == undefined){
+      return "/assets/img/user-image.jpg";
+    }else{
+      return "http://localhost:8080/"+img;
+    }
+
+}
 
 }

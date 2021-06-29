@@ -43,7 +43,8 @@
             <br>
             <div class="card-action">
                 <button type="submit" (click)="register()" class="btn-large btn-submit" style="color: white;width: 40%;"
-                    [routerLink]="['/users/login']">
+                    [routerLink]="['/users/login']" [disabled]="!formGroup.valid">
+
                     Sign up</button>
             </div>
             </div>

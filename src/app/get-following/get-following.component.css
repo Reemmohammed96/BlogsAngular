@@ -3,4 +3,45 @@
      height: 50px;
      border-radius: 50%;
      margin-right: 10px;
+     margin-top: 10px;
+     margin-bottom: 10px;
 }
+/* .card {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    width: 600px;
+    border: 1px solid lightgray;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 3px 3px lightgray;
+
+} */
+
+#card{
+    margin: 0 auto;
+    margin-left: 40%;
+    float: none;
+    margin-bottom: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px  2px 2px lightgray;
+    border-radius: 15px;
+     width: 450px;
+}
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    height: 320px;
+    width: 450px;
+    
+    
+  }
+  
+  div.scrollmenu a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+  }

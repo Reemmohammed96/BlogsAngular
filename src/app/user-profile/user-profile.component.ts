@@ -64,8 +64,10 @@ export class UserProfileComponent implements OnInit {
          this.following=1
         }
       )
+      location.reload();
     }
     )
+   
   }
   UnFollow(){
     let id=0;
@@ -79,6 +81,8 @@ export class UserProfileComponent implements OnInit {
           this.following=0
         }
       )
+      location.reload();
+
     }
     )
   }

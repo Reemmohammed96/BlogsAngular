@@ -30,6 +30,52 @@ export class ResultFromSearchComponent implements OnInit {
     }
    )
  }
+ like(id){
+  this.blogservice.like(id).subscribe(
+    e=>{
+      console.log(e)
+      e.likeFlag="like"
+      
+      console.log(e.likeFlag)
+      this.blogservice.getblog(id).subscribe(
+        e=>{
+          console.log(e)
+        }
+
+      )
+      location.reload();
+    }
+  )
+
+}
+isLiked(arr:string[]){
+ return arr.includes(JSON.parse(localStorage.getItem('USER'))._id)
+}
+
+unlike(id){
+ this.blogservice.unlike(id).subscribe(
+   e=>{
+     console.log(e)
+     e.likeFlag="unlike"
+   }
+ )
+ location.reload();
+
+}
+getAuthor(img:string){
+ if(img == undefined){
+   return "/assets/img/user-image.jpg"
+ }else{
+   return "http://localhost:8080/"+img
+ }
+}
+getUser(img:string){
+ if(img == undefined){
+   return "/assets/img/user-image.jpg";
+ }else{
+   return "http://localhost:8080/"+img;
+ }
+}
 
 
 }

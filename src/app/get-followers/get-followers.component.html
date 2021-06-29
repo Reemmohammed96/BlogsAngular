@@ -1,7 +1,11 @@
-<div class="card" style="text-align: center;">
-    <div *ngFor="let item of followers" class="center" style="display: inline;margin-left: 55px;margin-right:55px ;">
-        <img id="profileImg" [src]="'http://localhost:8080/'+item.userImg">
-        <a routerLink='/users/{{item._id}}' style="width :100px; font-size: 20px; color: black; display: inline;" class="m-2">{{item.username}}</a>
-    </div>
+<div id="card" style="position: fixed;">
 
-</div>
+    <div class=" scrollmenu">
+
+        <div *ngFor="let item of followers" class="center" style="display: block;margin-left: 55px;margin-right:55px ;">
+            <img id="profileImg"  [src]=getUser(item.userImg)>
+            <a routerLink='/users/{{item._id}}' style="width :100px; font-size: 20px; color: black; display: inline;"
+                class="m-2">{{item.username}}</a>
+        </div>
+        </div>
+        </div>

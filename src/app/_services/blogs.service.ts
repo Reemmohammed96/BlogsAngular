@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Blogs } from '../_models/blogs'
+import { Comment } from '../_models/comment';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,6 +9,9 @@ export class BlogsService {
   getAll(){
     return this.http.get<Blogs[]>('http://localhost:8080/getAll')
     }
+  getfollowingBlogs(){
+    return this.http.get<Blogs[]>('http://localhost:8080/blogs/followingBlogs')
+  }  
   ResultFromSearch(title:string){
     return this.http.get<Blogs[]>('http://localhost:8080/blogs/search/'+title)
     } 

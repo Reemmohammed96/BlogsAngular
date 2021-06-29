@@ -38,7 +38,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 18" width="24"><path d="M0 0h24v24H0z" fill="none"/>
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
         </svg>
-        Home</a>
+    Home</a>
+    <a routerLink="/homeAll">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-compass-fill" viewBox="0 0 16 16">
+            <path d="M15.5 8.516a7.5 7.5 0 1 1-9.462-7.24A1 1 0 0 1 7 0h2a1 1 0 0 1 .962 1.276 7.503 7.503 0 0 1 5.538 7.24zm-3.61-3.905L6.94 7.439 4.11 12.39l4.95-2.828 2.828-4.95z"/>
+          </svg>          
+    explore</a>    
+
     <a routerLink="blogs/add">
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/>
             <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
@@ -57,9 +63,9 @@
          <div class="slider round"></div>
        </label>
          <label style="size: 15px;">Dark Mode</label>
-       </div>    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-    <img src="assets/picside.PNG" style="margin-top: 50%">
+       </div>    <a routerLink="/about">About</a>
+    <a routerLink="/contact">Contact</a>
+    <img src="assets/picside.PNG" style="margin-top: 35%">
   </div>
   
   <!-- Use any element to open the sidenav -->

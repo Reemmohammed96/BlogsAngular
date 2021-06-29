@@ -1,0 +1,47 @@
+*{
+    font-family: robot;
+    margin-left: 15%;
+}
+h1{
+    font-size:60px;
+    margin-top:5%;
+  
+    font-family: 'Open Sans', sans-serif;
+     color:teal;
+ display: inline-block;
+   
+}
+
+textarea{
+margin-left: 40%;
+ margin-top: 7%;
+ width: 60%;
+ height:88%;
+ transform: translate(-50%,-50%);
+    
+
+}
+
+label{
+    margin-left: 10%;
+    font-size: larger;
+   
+}
+h4{
+    text-align: center;
+    margin-left: -15%;
+    color:rgb(185, 178, 178)
+    
+}
+button{
+    border-radius: 50%;
+    width: 10%;
+    margin-top: 0px;
+    margin-left: 60%;
+    background-color: gainsboro;
+    color: blue;
+    padding: 10px;
+}
+#txtarea{
+    resize: none;
+}

@@ -11,7 +11,9 @@ import { UsersService } from '../_services/users.service';
   styleUrls: ['./get-allblogs.component.css']
 })
 export class GetAllblogsComponent implements OnInit {
-  likeFlag:number[]=[];
+  likee = "like"
+  unlikee="unlike"
+  likeFlag:number;
   i;
   likes:number[]=[]
   blogs:Blogs[]=[]
@@ -23,23 +25,11 @@ export class GetAllblogsComponent implements OnInit {
   ngOnInit(): void {
    this.blogservice.getAll().subscribe(
      e=>{
-      this.i=0;
-      this.likeFlag[this.i]=0 
        this.blogs=e;
-       this.blogs.sort((a,b)=> 0 - (a > b ? 1 : -1))
        for(let i=0;i<this.blogs.length;i++){
          this.blogs[i].createdAt=this.blogdate
-         this.blogs[i].createdAt
-       if( this.blogs[i].likes.includes(JSON.parse(localStorage.getItem('USER'))._id)){
-         this.likeFlag[this.i]=1
-        console.log(this.blogs[i])
-      }
-      else{
-        this.likeFlag[i]=0
-
-      }   
+         this.blogs[i].createdAt.getDate()
     }
-    
      }
    )
    this.userservicve.getAllusers().subscribe(
@@ -48,22 +38,52 @@ export class GetAllblogsComponent implements OnInit {
     }
    )
   }
+ 
  like(id){
    this.blogservice.like(id).subscribe(
      e=>{
        console.log(e)
-       this.likeFlag[id]=1
+       e.likeFlag="like"
+       
+       console.log(e.likeFlag)
+       this.blogservice.getblog(id).subscribe(
+         e=>{
+           console.log(e)
+         }
+
+       )
+       location.reload();
      }
    )
- }
+
+}
+isLiked(arr:string[]){
+  return arr.includes(JSON.parse(localStorage.getItem('USER'))._id)
+}
+
  unlike(id){
   this.blogservice.unlike(id).subscribe(
     e=>{
       console.log(e)
-      this.likeFlag[id]=0
+      e.likeFlag="unlike"
     }
   )
-}
+  location.reload();
 
+}
+getAuthor(img:string){
+  if(img == undefined){
+    return "/assets/img/user-image.jpg"
+  }else{
+    return "http://localhost:8080/"+img
+  }
+}
+getUser(img:string){
+  if(img == undefined){
+    return "/assets/img/user-image.jpg";
+  }else{
+    return "http://localhost:8080/"+img;
+  }
+}
   
 }
